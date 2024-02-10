@@ -11,14 +11,9 @@ import styles from './content.module.css';
 
 const { Link } = Anchor;
 
-type Props = {
-    children: JSX.Element;
-};
-
-const Content = ({ children }: Props) => {
+const Content = () => {
     return (
         <main className={styles.main}>
-            {children}
             <Card>
                 <h3>C CleverFit ты сможешь:</h3>
                 <p>— планировать свои тренировки на календаре, выбирая тип и уровень нагрузки;</p>

@@ -23,3 +23,21 @@
 .menu > li {
     margin-bottom: 16px !important;
 }
+
+.trigger {
+    top: 480px;
+    left: 0;
+    max-width: 20px;
+    min-height: 66px;
+    clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);
+    border: none;
+}
+
+.trigger > span {
+    color: #262626;
+    width: 20px;
+}
+
+.trigger > span:hover {
+    color: #262626;
+}

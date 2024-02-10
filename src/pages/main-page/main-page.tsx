@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Button } from 'antd';
 import Header from '@components/header/header';
 import Content from '@components/content/content';
 import bgImage from '@public/img/images/main_page_light.jpg';
@@ -21,6 +21,10 @@ const { Sider } = Layout;
 
 export const MainPage: React.FC = () => {
     const [collapsed, setCollapsed] = useState(false);
+
+    const handleTrigger = () => {
+        setCollapsed(!collapsed);
+    };
 
     return (
         <Layout
@@ -79,14 +83,24 @@ export const MainPage: React.FC = () => {
                     ]}
                 />
             </Sider>
-            <Layout style={{ backgroundColor: 'transparent' }}>
+            <Layout style={{ backgroundColor: 'transparent', position: 'relative' }}>
+                {collapsed ? (
+                    <Button
+                        className={styles.trigger}
+                        style={{ border: 'none', position: 'absolute' }}
+                        icon={<MenuUnfoldOutlined />}
+                        onClick={handleTrigger}
+                    />
+                ) : (
+                    <Button
+                        className={styles.trigger}
+                        style={{ border: 'none', position: 'absolute' }}
+                        icon={<MenuFoldOutlined />}
+                        onClick={handleTrigger}
+                    />
+                )}
                 <Header />
-                <Content>
-                    {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                        className: 'trigger',
-                        onClick: () => setCollapsed(!collapsed),
-                    })}
-                </Content>
+                <Content></Content>
                 <Footer />
             </Layout>
         </Layout>
