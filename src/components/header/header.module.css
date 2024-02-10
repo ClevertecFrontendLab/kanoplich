@@ -1,0 +1,25 @@
+.header {
+    background-color: #f0f5ff;
+    padding: 16px 24px;
+}
+
+.name_page {
+    font-size: 0.875em;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.title {
+    max-width: 1000px;
+    font-size: 2.375em;
+    font-weight: 500;
+    margin: 14px 0 10px 0;
+}
+
+.btn {
+    margin-top: 5px;
+}

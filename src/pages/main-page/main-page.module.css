@@ -1,0 +1,25 @@
+.layout {
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+.sider > div {
+    background-color: #ffffff;
+}
+
+.logo {
+    padding: 44px 46px 67px 29px;
+}
+
+.logo_small {
+    padding: 44px 18px 67px 18px;
+}
+
+.logo_img {
+    max-width: 133px;
+    height: 33px;
+}
+
+.menu > li {
+    margin-bottom: 16px !important;
+}

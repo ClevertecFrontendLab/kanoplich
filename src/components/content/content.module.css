@@ -1,0 +1,12 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 24px;
+    width: 752px;
+    gap: 24px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
