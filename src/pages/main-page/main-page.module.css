@@ -4,6 +4,9 @@
 }
 
 .sider > div {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     background-color: #ffffff;
 }
 
@@ -21,7 +24,12 @@
 }
 
 .menu > li {
-    margin-bottom: 16px !important;
+    margin: 0 0 16px -8px !important;
+}
+
+.menu_exit {
+    margin: 0 0 0 -8px !important;
+    border: none !important;
 }
 
 .trigger {

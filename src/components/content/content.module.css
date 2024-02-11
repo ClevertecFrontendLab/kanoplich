@@ -2,11 +2,82 @@
     display: flex;
     flex-direction: column;
     margin: 24px;
-    width: 752px;
-    gap: 24px;
 }
 
 .wrapper {
     display: flex;
     justify-content: space-between;
+    gap: 24px;
+}
+
+.card_wrapper {
+    max-width: 752px;
+    padding-bottom: 180px;
+}
+
+.card,
+.card > * {
+    border-radius: 2px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+.card_btn {
+    text-align: center;
+    width: 100%;
+}
+
+.card_btn > div {
+    padding: 0;
+    margin: 0;
+}
+
+.card_btn > div > p {
+    margin: 12px 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+.btn {
+    margin: 12px 0;
+}
+
+.btn > * {
+    color: #2f54eb;
+}
+
+.social_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.social {
+    background-color: #ffffff;
+    border-radius: 2px;
+    width: 240px;
+}
+
+.social_btn_wrapper {
+    margin: 6px 9px;
+}
+
+.social_btn > span {
+    font-size: 16px;
+    line-height: 130%;
+    color: #2f54eb;
+}
+
+.social_mobile {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 19px;
+}
+
+.link_btn > span {
+    font-size: 16px;
+    line-height: 130%;
+    color: #2f54eb;
 }
