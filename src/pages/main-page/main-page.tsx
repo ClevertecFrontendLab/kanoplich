@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
-import { Layout, Menu, Button, Divider } from 'antd';
+import { Layout, Menu, Button, Divider, Grid } from 'antd';
 import Header from '@components/header/header';
 import Content from '@components/content/content';
-import bgImage from '@public/img/images/main_page_light.jpg';
-import logoMax from '@public/img/icons/Logo_max.svg';
-import logoSmall from '@public/img/icons/Logo_small.svg';
+import bgImage from '/img/images/main_page_light.jpg';
+import logoMax from '/img/icons/Logo_max.svg';
+import logoSmall from '/img/icons/Logo_small.svg';
 import Footer from '@components/footer/footer';
 import {
     HeartIcon,
@@ -18,9 +18,15 @@ import {
 import styles from './main-page.module.css';
 
 const { Sider } = Layout;
+const { useBreakpoint } = Grid;
 
 export const MainPage: React.FC = () => {
     const [collapsed, setCollapsed] = useState(false);
+    const screens = useBreakpoint();
+
+    const maxWidth = screens.sm ? 208 : 106;
+    const minWidth = screens.sm ? 64 : 0;
+    const styleLeft = !screens.sm ? (collapsed ? '0' : '106px') : '0';
 
     const handleTrigger = () => {
         setCollapsed(!collapsed);
@@ -40,15 +46,16 @@ export const MainPage: React.FC = () => {
                 trigger={null}
                 collapsible
                 collapsed={collapsed}
-                collapsedWidth={64}
-                width={208}
+                collapsedWidth={minWidth}
+                width={maxWidth}
+                style={{ position: screens.sm ? 'relative' : 'fixed' }}
             >
                 <div>
-                    <div className={collapsed ? styles.logo_small : styles.logo}>
+                    <div className={styles.logo}>
                         <img
-                            className={styles.logo_img}
+                            className={collapsed ? styles.logo_img_small : styles.logo_img}
                             src={collapsed ? logoSmall : logoMax}
-                            alt='cleverfit'
+                            alt='CleverFit'
                         />
                     </div>
                     <Menu
@@ -58,22 +65,22 @@ export const MainPage: React.FC = () => {
                         items={[
                             {
                                 key: '1',
-                                icon: <CalendarIcon />,
+                                icon: screens.sm && <CalendarIcon />,
                                 label: 'Календарь',
                             },
                             {
                                 key: '2',
-                                icon: <HeartIcon />,
+                                icon: screens.sm && <HeartIcon />,
                                 label: 'Тренировки',
                             },
                             {
                                 key: '3',
-                                icon: <CupIcon />,
+                                icon: screens.sm && <CupIcon />,
                                 label: 'Достижения',
                             },
                             {
                                 key: '4',
-                                icon: <ProfileIcon />,
+                                icon: screens.sm && <ProfileIcon />,
                                 label: 'Профиль',
                             },
                         ]}
@@ -88,7 +95,7 @@ export const MainPage: React.FC = () => {
                         items={[
                             {
                                 key: '1',
-                                icon: <ExitIcon />,
+                                icon: screens.sm && <ExitIcon />,
                                 label: 'Выход',
                             },
                         ]}
@@ -98,15 +105,25 @@ export const MainPage: React.FC = () => {
             <Layout style={{ backgroundColor: 'transparent', position: 'relative' }}>
                 {collapsed ? (
                     <Button
+                        data-test-id={screens.xs ? 'sider-switch-mobile' : 'sider-switch'}
                         className={styles.trigger}
-                        style={{ border: 'none', position: 'absolute' }}
+                        style={{
+                            border: 'none',
+                            position: screens.xs ? 'fixed' : 'absolute',
+                            left: styleLeft,
+                        }}
                         icon={<MenuUnfoldOutlined />}
                         onClick={handleTrigger}
                     />
                 ) : (
                     <Button
+                        data-test-id={screens.xs ? 'sider-switch-mobile' : 'sider-switch'}
                         className={styles.trigger}
-                        style={{ border: 'none', position: 'absolute' }}
+                        style={{
+                            border: 'none',
+                            position: screens.xs ? 'fixed' : 'absolute',
+                            left: styleLeft,
+                        }}
                         icon={<MenuFoldOutlined />}
                         onClick={handleTrigger}
                     />

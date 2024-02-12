@@ -15,11 +15,42 @@
 
 .title {
     max-width: 1000px;
-    font-size: 2.375em;
     font-weight: 500;
-    margin: 14px 0 10px 0;
+    margin: 12px 0 3px 0;
+}
+
+.title > span {
+    font-size: 2.375em;
+    font-weight: 700;
+    line-height: 130%;
+
+    @media (max-width: 870px) {
+        font-weight: 500;
+        font-size: 1.5em;
+    }
+
+    @media (max-width: 680px) {
+        font-size: 1.25em;
+    }
+}
+
+.title_h {
+    display: inline;
+    font-size: 1em;
+    font-weight: 700;
+
+    @media (max-width: 870px) {
+        font-weight: 500;
+        font-size: 1em;
+    }
 }
 
 .btn {
+    padding: 0;
     margin-top: 5px;
+    margin-right: 20px;
+
+    @media (max-width: 680px) {
+        margin: 0;
+    }
 }

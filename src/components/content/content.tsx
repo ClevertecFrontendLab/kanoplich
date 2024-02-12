@@ -22,14 +22,7 @@ const Content = () => {
                     </p>
                 </Card>
                 <Card className={styles.card} style={{ marginBottom: '16px' }}>
-                    <h4
-                        style={{
-                            margin: '0',
-                            fontSize: '1.25em',
-                            fontWeight: '500',
-                            lineHeight: '130%',
-                        }}
-                    >
+                    <h4 className={styles.card_h4}>
                         CleverFit — это не просто приложение, а твой личный помощник в мире фитнеса.
                         Не откладывай на завтра — начни тренироваться уже сегодня!
                     </h4>

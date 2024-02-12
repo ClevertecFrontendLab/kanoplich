@@ -1,24 +1,37 @@
-import { Typography, Button } from 'antd';
+import { Button, Breadcrumb, Grid } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
 import styles from './header.module.css';
 
-const { Text, Title } = Typography;
+const { useBreakpoint } = Grid;
 
 const Header = () => {
+    const screens = useBreakpoint();
     return (
         <header className={styles.header}>
-            <Text className={styles.name_page}>Главная</Text>
+            <Breadcrumb className={styles.name_page}>
+                <Breadcrumb.Item>Главная</Breadcrumb.Item>
+            </Breadcrumb>
             <div className={styles.wrapper}>
-                <Title className={styles.title} style={{ marginBottom: '10px' }}>
-                    Приветствуем тебя в CleverFit — приложении, которое поможет тебе добиться своей
-                    мечты!
-                </Title>
+                <div className={styles.title}>
+                    <span>
+                        Приветствуем тебя в <h1 className={styles.title_h}>CleverFit</h1> —
+                        приложении, <br />
+                        которое поможет тебе добиться своей мечты!
+                    </span>
+                </div>
                 <Button
                     className={styles.btn}
-                    style={{ border: 'none', background: 'transparent', boxShadow: 'none' }}
-                    icon={<SettingOutlined />}
+                    style={{
+                        border: screens.md ? 'none' : '',
+                        background: screens.md ? 'transparent' : '',
+                        boxShadow: screens.md ? 'none' : '',
+                    }}
+                    icon={
+                        (screens.lg && <SettingOutlined />) || (!screens.md && <SettingOutlined />)
+                    }
+                    shape='circle'
                 >
-                    Настройки
+                    {screens.md && 'Настройки'}
                 </Button>
             </div>
         </header>
