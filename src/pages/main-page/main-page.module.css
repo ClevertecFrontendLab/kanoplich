@@ -2,22 +2,10 @@
     margin: 0 auto;
     max-width: 1440px;
     height: 1024px;
-
-    @media (max-width: 834px) {
-        height: 1194px;
-    }
-
-    @media (max-width: 680px) {
-        height: auto;
-    }
 }
 
 .sider {
     z-index: 1;
-    @media (max-width: 575px) {
-        height: 640px;
-        position: fixed;
-    }
 }
 
 .sider > div {
@@ -31,25 +19,11 @@
     text-align: center;
     padding: 14px 0 17px;
     margin: 30px 0 50px;
-
-    @media (max-width: 575px) {
-        padding: 14px 0 0;
-        margin: 0 0 25px;
-    }
 }
 
 .logo_img {
-    max-width: 133px;
+    width: 133px;
     height: 33px;
-
-    @media (max-width: 575px) {
-        max-width: 72px;
-        height: 18px;
-    }
-
-    @media (max-width: 575px) {
-        text-align: center;
-    }
 }
 
 .logo_img_small {
@@ -62,19 +36,6 @@
     justify-content: space-between;
     flex-direction: column;
     height: 216px;
-}
-
-.menu > li {
-    @media (max-width: 575px) {
-        width: 90px;
-        padding: 0 8px !important;
-    }
-}
-
-.menu_exit > li {
-    @media (max-width: 575px) {
-        text-align: center;
-    }
 }
 
 .menu_exit {
@@ -90,16 +51,6 @@
     clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);
     border: none;
     z-index: 1;
-
-    @media (max-width: 834px) {
-        top: 560px;
-    }
-
-    @media (max-width: 575px) {
-        top: 24px;
-        max-width: 32px;
-        min-height: 48px;
-    }
 }
 
 .trigger > span {
@@ -109,4 +60,49 @@
 
 .trigger > span:hover {
     color: #262626;
+}
+
+/*  ------------------------- */
+
+@media (max-width: 834px) {
+    .layout {
+        height: 1194px;
+    }
+    .trigger {
+        top: 560px;
+    }
+}
+
+@media (max-width: 680px) {
+    .layout {
+        height: auto;
+    }
+}
+
+@media (max-width: 575px) {
+    .sider {
+        height: 640px;
+        position: fixed;
+    }
+    .logo {
+        padding: 14px 0 0;
+        margin: 0 0 25px;
+    }
+    .logo_img {
+        text-align: center;
+        width: 72px;
+        height: 18px;
+    }
+    .menu > li {
+        width: 90px;
+        padding: 0 8px !important;
+    }
+    .menu_exit > li {
+        text-align: center;
+    }
+    .trigger {
+        top: 24px;
+        max-width: 32px;
+        min-height: 48px;
+    }
 }

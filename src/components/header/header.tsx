@@ -13,11 +13,9 @@ const Header = () => {
             </Breadcrumb>
             <div className={styles.wrapper}>
                 <div className={styles.title}>
-                    <span>
-                        Приветствуем тебя в <h1 className={styles.title_h}>CleverFit</h1> —
-                        приложении, <br />
-                        которое поможет тебе добиться своей мечты!
-                    </span>
+                    Приветствуем тебя в <h1 className={styles.title_h}>CleverFit</h1> — приложении,{' '}
+                    <br />
+                    которое поможет тебе добиться своей мечты!
                 </div>
                 <Button
                     className={styles.btn}

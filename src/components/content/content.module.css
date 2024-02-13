@@ -4,21 +4,12 @@
     justify-content: space-between;
     height: 100%;
     margin: 24px;
-
-    @media (max-width: 575px) {
-        margin: 16px;
-    }
 }
 
 .wrapper {
     display: flex;
     justify-content: space-between;
     gap: 24px;
-
-    @media (max-width: 680px) {
-        flex-direction: column;
-        gap: 8px;
-    }
 }
 
 .card_wrapper {
@@ -31,12 +22,6 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 130%;
-}
-
-.card > div {
-    @media (max-width: 575px) {
-        padding: 16px;
-    }
 }
 
 .card_btn {
@@ -80,24 +65,12 @@
     display: flex;
     justify-content: space-between;
     align-items: end;
-
-    @media (max-width: 680px) {
-        flex-direction: column-reverse;
-        align-items: center;
-        gap: 24px 0;
-        margin-top: 16px;
-    }
 }
 
 .social {
     background-color: #fff;
     border-radius: 2px;
     width: 240px;
-
-    @media (max-width: 680px) {
-        width: 100%;
-        text-align: center;
-    }
 }
 
 .social_btn_wrapper {
@@ -120,4 +93,32 @@
     font-size: 16px;
     line-height: 130%;
     color: #2f54eb;
+}
+
+/* ------------------------- */
+
+@media (max-width: 575px) {
+    .main {
+        margin: 16px;
+    }
+    .card > div {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 680px) {
+    .wrapper {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .social_wrapper {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 24px 0;
+        margin-top: 16px;
+    }
+    .social {
+        width: 100%;
+        text-align: center;
+    }
 }
