@@ -24,7 +24,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 .logo {
@@ -89,13 +89,13 @@
     min-height: 66px;
     clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);
     border: none;
+    z-index: 1;
 
     @media (max-width: 834px) {
         top: 560px;
     }
 
     @media (max-width: 575px) {
-        z-index: 2;
         top: 24px;
         max-width: 32px;
         min-height: 48px;

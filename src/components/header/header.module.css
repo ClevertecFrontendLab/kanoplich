@@ -16,7 +16,7 @@
 .title {
     max-width: 1000px;
     font-weight: 500;
-    margin: 12px 0 3px 0;
+    margin: 12px 0 3px;
 }
 
 .title > span {

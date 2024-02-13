@@ -17,6 +17,7 @@
 
     @media (max-width: 680px) {
         flex-direction: column;
+        gap: 8px;
     }
 }
 
@@ -89,7 +90,7 @@
 }
 
 .social {
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 2px;
     width: 240px;
 
